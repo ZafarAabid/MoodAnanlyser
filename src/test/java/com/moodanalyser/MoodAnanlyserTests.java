@@ -19,4 +19,22 @@ public class MoodAnanlyserTests {
                 Assert.assertEquals("invalid mood type",e.getMessage());
             }
     }
+    @Test
+    public void givenMoodAnalyserClass_whenProper_returnObject()
+    {
+        MoodAnalyser moodAnalyser=MoodAnalyserFactory.createMoodAnalyser("I'm in happy mood");
+        try {
+            String mood = moodAnalyser.analyseMood();
+            Assert.assertEquals("happy",mood);
+        } catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public static void givenMessage_WhenProper_Should_Return_Object_Using_Reflector() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        ObjectReflector.dump(moodAnalyser, 0);
+
+    }
 }
