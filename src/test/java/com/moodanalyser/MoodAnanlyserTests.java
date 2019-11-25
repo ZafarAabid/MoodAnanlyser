@@ -16,6 +16,7 @@ public class MoodAnanlyserTests {
             }
             catch (MoodAnalyserException e)
             {
+                Assert.assertEquals("invalid mood type",e.getMessage());
             }
     }
 }
